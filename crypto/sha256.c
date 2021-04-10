@@ -11,12 +11,10 @@ a function that computes the hash of a sequence of bytes
 */
 uint8_t *sha256(int8_t const *s, size_t len, uint8_t digest[SHA256_DIGEST_LENGTH])
 {
-  if (!s)
+  if (!s || !digest)
     return NULL;
 
-  for(int8_t i=0; i < (int8_t)len; i++) {
-    digest[i]=(uint8_t)s[i];
-  }
+  digest = SHA256((const unsigned char) s, len, digest);
 
   return &digest;
 }  
