@@ -1,4 +1,5 @@
 #include "hblk_crypto.h"
+#include <openssl/sha.h>
 
 /*
 a function that computes the hash of a sequence of bytes
