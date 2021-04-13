@@ -9,16 +9,15 @@
 
 EC_KEY *ec_create(void)
 {
-    EC_KEY *newkey = EC_KEY_new_by_curve_name(EC_CURVE);
+    EC_KEY *key;
 
-    if (!newkey)
+    key = EC_KEY_new_by_curve_name(EC_CURVE);
+    if (!key)
         return (NULL);
-
-    if (EC_KEY_generate_key(newkey) != 1)
+    if (EC_KEY_generate_key(key) != 1)
     {
-        EC_KEY_free(newkey);
+        EC_KEY_free(key);
         return (NULL);
     }
-
-    return (newkey);
+    return (key);
 }
