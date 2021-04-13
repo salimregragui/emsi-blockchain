@@ -9,18 +9,11 @@ a function that computes the hash of a sequence of bytes
 - function returns a pointer to digest
 - If digest happens to be NULL, the function must do nothing and return NULL
 */
-uint8_t *sha256(int8_t const *s, size_t len, uint8_t digest[SHA256_DIGEST_LENGTH])
+uint8_t *sha256(
+  int8_t const *s, size_t len, uint8_t digest[SHA256_DIGEST_LENGTH])
 {
-  if (!s)
+  if (!s || !digest)
     return NULL;
 
-  for (int8_t counter = 0; counter < (int8_t)len; counter++)
-  {
-    digest[counter] = (uint8_t)s[counter];
-  }
-
-  if(!digest)
-    return NULL;
-
-  return digest;
-}  
+  return SHA256((uint8_t const *)s, len, digest);
+}
