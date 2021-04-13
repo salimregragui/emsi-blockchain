@@ -9,7 +9,8 @@
  * Description: If @key is NULL, nothing will be done.
  *
  * Return: If @key is NULL or an error occurs, return NULL.
- * Otherwise, return @pub.* function that extracts the public key from an EC_KEY
+ * Otherwise, return @pub.* function that extracts the public
+ *key from an EC_KEY
  *opaque structure
  *@key: is a pointer to the EC_KEY structure to retrieve
  *the public key from. If it is NULL, your function must do nothing
