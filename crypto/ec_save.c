@@ -3,14 +3,14 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 /**
- * _ec_save - save public and private keys in PEM format (subroutine)
- *
- * @key: pointer to the EC key pair to be saved
- * @folder: path of the directory in which to save the keys
- * @ofile_len: maximum output file path length
- *
- * Return: Upon failure, return 0. Otherwise, return 1.
- */
+* _ec_save - save public and private keys in PEM format (subroutine)
+*
+* @key: pointer to the EC key pair to be saved
+* @folder: path of the directory in which to save the keys
+* @ofile_len: maximum output file path length
+*
+* Return: Upon failure, return 0. Otherwise, return 1.
+*/
 static int _ec_save(EC_KEY *key, char const *folder, size_t ofile_len)
 {
 FILE *ostream = NULL;
